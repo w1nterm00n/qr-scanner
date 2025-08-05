@@ -25,7 +25,8 @@
         function onScanSuccess(decodedText, decodedResult) {
             let date = new Date();
             document.getElementById('result').textContent = decodedText;
-            document.getElementById('time').textContent = date;
+            document.getElementById('time').textContent = date.toLocaleString();
+            alert("QR считан")
             // После успешного сканирования можно остановить сканер
             // html5QrCode.stop();
         }
