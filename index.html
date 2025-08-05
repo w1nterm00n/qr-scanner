@@ -4,16 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QR SCANNER</title>
+    <style>
+        #result{
+            max-width: 90vw;
+            border: 1px solid green;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 <body>
     <h1>Welcome to QR SCANNER</h1>
     <div id="reader" style="width: 300px"></div>
     <div id="result"></div>
+    <div id="time"></div>
 
     <script src="https://unpkg.com/html5-qrcode"></script>
     <script>
         function onScanSuccess(decodedText, decodedResult) {
+            let date = new Date();
             document.getElementById('result').textContent = decodedText;
+            document.getElementById('time').textContent = getDate(date);
             // После успешного сканирования можно остановить сканер
             // html5QrCode.stop();
         }
@@ -42,6 +52,8 @@
         }).catch(err => {
             document.getElementById('result').textContent = "Ошибка доступа к камере: " + err;
         });
+
+
     </script>
 </body>
 </html>
