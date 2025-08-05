@@ -18,7 +18,6 @@
     <h1>Welcome to QR SCANNER</h1>
     <div id="reader" style="width: 300px"></div>
     <div id="time"></div>
-    <div id="result"></div>
 
     <script src="https://unpkg.com/html5-qrcode"></script>
     <script>
@@ -26,7 +25,6 @@
         let cameraId;      // глобально
     
         function onScanSuccess(decodedText, decodedResult) {
-            document.getElementById('result').textContent = decodedText;
             let date = new Date();
             let timeStr = date.toLocaleTimeString('ru-RU', { hour12: false });
             document.getElementById('time').textContent = `Time: ${timeStr} : QR sent`;
