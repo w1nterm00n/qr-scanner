@@ -6,17 +6,19 @@
     <title>QR SCANNER</title>
     <style>
         #result{
-            max-width: 90vw;
+            max-width: 300px;
             border: 1px solid green;
             margin: 0 auto;
+            word-break: break-all;
+            white-space: pre-wrap;
         }
     </style>
 </head>
 <body>
     <h1>Welcome to QR SCANNER</h1>
     <div id="reader" style="width: 300px"></div>
+    <div id="time">Текущая дата и время</div>
     <div id="result"></div>
-    <div id="time"></div>
 
     <script src="https://unpkg.com/html5-qrcode"></script>
     <script>
