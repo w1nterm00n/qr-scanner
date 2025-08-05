@@ -44,7 +44,7 @@
                 }, 2000);
             });
     
-            fetch(`http://192.168.50.183:18000/run-parsing-check?invoice_link=${encodeURIComponent(decodedText)}`, {
+            fetch(`http://192.168.50.183:80/run-parsing-check?invoice_link=${encodeURIComponent(decodedText)}`, {
                 method: 'GET',
                 headers: {
                     'invoice-link': encodeURIComponent(decodedText)
