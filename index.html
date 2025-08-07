@@ -18,6 +18,7 @@
     <h1>Welcome to QR SCANNER</h1>
     <div id="reader" style="width: 300px"></div>
     <div id="time"></div>
+    <div id="result"></div>
 
     <script src="https://unpkg.com/html5-qrcode"></script>
     <script>
@@ -48,7 +49,17 @@
                 //     'invoice-link': encodeURIComponent(decodedText)
                 // }
             })
-            .then(response => response.text())
+            .then(response => {
+                switch (response.status) {
+                    case 200:
+                        document.getElementById('result').innerHTML += `<div style="color:green;">Success</div>`;
+                        break;
+                    default:
+                        document.getElementById('result').innerHTML += `<div style="color:red;">Failed</div>`;
+                        break;
+                }
+                return response.text();
+            })
             .then(data => {
                 console.log("Ответ сервера:", data);
                 document.getElementById('result').textContent += "\nОтвет сервера:\n" + JSON.stringify(data, null, 2);
