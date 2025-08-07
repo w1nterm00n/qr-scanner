@@ -60,10 +60,10 @@
                 }
                 return response.text();
             })
-            .then(data => {
-                console.log("Ответ сервера:", data);
-                document.getElementById('result').textContent += "\nОтвет сервера:\n" + JSON.stringify(data, null, 2);
-            })
+            // .then(data => {
+            //     console.log("Ответ сервера:", data);
+            //     document.getElementById('result').textContent += "\nОтвет сервера:\n" + JSON.stringify(data, null, 2);
+            // })
             .catch(error => {
                 console.error("Ошибка запроса:", error);
                 document.getElementById('result').textContent += "\nОшибка запроса: " + error;
